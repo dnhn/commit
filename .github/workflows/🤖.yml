@@ -1,6 +1,7 @@
 name: 🤖
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 6-9 * * 1,4'
     - cron: '0 6-8 * * 2,5'
@@ -10,17 +11,15 @@ on:
     - cron: '0 5 * * *'
 
 jobs:
-  auto_commit:
-    name: 'Auto push a commit to my repo'
+  commit:
+    name: 🤖
     runs-on: macos-latest
     steps:
     - uses: actions/checkout@main
-    - name: Create sample file with just timestamp
-      run: date +%s >> 🤖.txt
-    - name: Commit file
-      run: |
+    - run: |
           git config --global user.name '🤖'
           git config --global user.email '2561973+dnhn@users.noreply.github.com'
+          date +%s >> 🤖.txt
           git add .
           git commit -m 🤖
           git push
