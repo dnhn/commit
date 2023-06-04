@@ -20,7 +20,7 @@ jobs:
     - name: Commit file
       run: |
           git config --global user.name '🤖'
-          git config --global user.email '2561973@users.noreply.github.com'
+          git config --global user.email '2561973+dnhn@users.noreply.github.com'
           git add .
           git commit -m 🤖
           git push
